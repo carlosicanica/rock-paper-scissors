@@ -47,16 +47,16 @@ function game () {
         console.log(playRound(playerSelection, computerSelection));
 
     }
+
+
+        if (playerScore < compScore) {
+            return "You lost the game! Better luck next time!"
+        } else if (playerScore > compScore) {
+            return "Congratulations! You won the game!";
+        } else {
+            return "The game is a tie!"
+        }
 }
 
-if (playerScore < compScore) {
-    return "You lost! Better luck next time!"
-} else if (playerScore > compScore) {
-    return "Congratulations! You won!";
-} else {
-    return "The game is a tie!"
-}
-
-console.log(game());
-   
+console.log(game())
 
