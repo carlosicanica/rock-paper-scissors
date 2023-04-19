@@ -1,4 +1,5 @@
-
+let compScore = 0;
+let playerScore = 0;
 
 function getComputerChoice () {
     const compOptions = ["rock", "paper", "scissors"];
@@ -13,26 +14,49 @@ function playRound (playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "rock") {
         return "It's a tie! You both chose rock.";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
+        compScore++;
         return "You lost! Computer chose paper.";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        playerScore++;
         return "You won! Computer chose scissors.";
     }  else if (playerSelection === "paper" && computerSelection === "paper") {
         return "It's a tie! You both chose paper.";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        compScore++;
         return "You lost! Computer chose scissors.";
     }  else if (playerSelection === "paper" && computerSelection === "rock") {
+        playerScore++;
         return "You won! Computer chose rock.";
     } else if (playerSelection === "scissors" && computerSelection === "scissors") {
         return "It's a tie! You both chose scissors.";
     }  else if (playerSelection === "scissors" && computerSelection === "rock") {
+        compScore++;
         return "You lost! Computer chose rock.";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        playerScore++;
         return "You won! Computer chose paper.";
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
 
-// playRound();
+
+function game () {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+
+    }
+}
+
+if (playerScore < compScore) {
+    return "You lost! Better luck next time!"
+} else if (playerScore > compScore) {
+    return "Congratulations! You won!";
+} else {
+    return "The game is a tie!"
+}
+
+console.log(game());
+   
+
