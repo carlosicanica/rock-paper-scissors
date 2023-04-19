@@ -50,14 +50,13 @@ function game () {
 
 
         if (playerScore < compScore) {
-            return "You lost the game! Better luck next time!"
-        
+            alert("You lost the game! Better luck next time!")
         } else if (playerScore > compScore) {
-            return "Congratulations! You won the game!";
+            alert("Congratulations! You won the game!");
         } else {
-            return "The game is a tie!"
+            alert("The game is a tie!");
         }
 }
 
-console.log(game())
+game();
 
