@@ -42,15 +42,16 @@ function playRound (playerSelection, computerSelection) {
 
 function game () {
     for (let i = 0; i < 5; i++) {
-        const playerSelection = "rock";
+        const playerSelection = prompt("Choose between rock, paper or scissors!", "Rock, Paper, Scissors").toLowerCase();
         const computerSelection = getComputerChoice();
-        // console.log(playRound(playerSelection, computerSelection));
+        alert(playRound(playerSelection, computerSelection));
 
     }
 
 
         if (playerScore < compScore) {
             return "You lost the game! Better luck next time!"
+        
         } else if (playerScore > compScore) {
             return "Congratulations! You won the game!";
         } else {
